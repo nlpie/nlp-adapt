@@ -12,7 +12,7 @@ The host system on which NLP-ADAPT is to be installed should have at least 8 gig
 
 Move `NLP-IE.ova` to a known folder and then open `NLP-IE.ova` with VirtualBox. This can be done through the VirtualBox GUI using the <File><Import Appliance> menu option (see Fig. 1):
     
-![Fig. 1: Using the GUI to select the source .OVA file to create a VM Appliance](docs/images/fig_1.png?raw=true "Optional Title")
+![Fig. 1: Using the GUI to select the source .OVA file to create a VM Appliance](docs/images/fig_1.png)
 
 &nbsp; &nbsp; &nbsp; &nbsp;
 
