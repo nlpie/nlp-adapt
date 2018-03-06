@@ -15,6 +15,8 @@ Move `NLP-IE.ova` to a known folder and then open `NLP-IE.ova` with VirtualBox. 
 ![](docs/images/fig_1.png)
 *Fig. 1: Using the GUI to select the source .OVA file to create a VM Appliance*
 
+&nbsp; &nbsp;
+
 Next, choose the file `NLP-ADAPT.ova` you have downloaded and then click on `Continue>Import>`. You should get a progress bar showing the status of building the VM (see Fig. 2).
 
 
@@ -31,12 +33,12 @@ Alternately, from the command line you can import the `NLP-ADAPT.ova` as an appl
 *Fig. 3: Sample command line creation of VM Appliance*
 
 &nbsp; &nbsp;
-
 After this step is done NLP-ADAPT will be available from the VirtualBox GUI (see Fig. 4), or via the command line, using the command: `vboxmanage list vms`.
 
 ![](docs/images/fig_4.png)
 *Fig. 4: GUI display of available VM appliances*
 
+&nbsp; &nbsp;
 ### Share the files for analysis.
 
 Next, you will need to configure NLP-ADAPT to have access to a shared data folder on the local host computer, that will be used for holding text records for analysis by the annotator systems.
@@ -52,6 +54,7 @@ to add the shared folder. Select the location of data on the local host computer
 ![](docs/images/fig_5.png)
 *Fig. 5: Configuring share folder on host*
 
+&nbsp; &nbsp;
 You can also do this from the command line using the command:
 `vboxmanage sharefolder add "NLP-IE" --name "data" --hostpath
 "/path/to/data_in_parent_folder"` to give the VM access to the host filesystem. Please note; The parent folder with “data_in” subfolder can be anywhere on the host computer, but the share /MUST/ be named "data" in order for the VM to run without modification.
