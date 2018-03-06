@@ -12,23 +12,21 @@ The host system on which NLP-ADAPT is to be installed should have at least 8 gig
 
 Move =NLP-IE.ova= to a known folder and then open =NLP-IE.ova= with VirtualBox. This can be done through the VirtualBox GUI using the <File><Import Appliance> menu option (see Fig. 1):
 
-[Fig. 1: Using the GUI to select the source .OVA file to create a VM Appliance](docs//images/fig_1.png)
+![Fig. 1: Using the GUI to select the source .OVA file to create a VM Appliance](docs/images/fig_1.png)
 
 Next, choose the file =NLP-ADAPT.ova= you have downloaded and then click on <Continue><Import>. You should get a progress bar showing the status of building the VM (see Fig. 2).
 
-[Fig. 2. GUI VM Appliance creation status](docs//images/fig_2.png)
-
+![Fig. 2. GUI VM Appliance creation status](docs/images/fig_2.png)
 
 Alternately, from the command line you can import the =NLP-ADAPT.ova= as an appliance by simply typing the command:
 
 =vboxmanage import /path/to/NLP-ADAPT.ova=. Once initiated, you will see output with status at the bottom of you terminal window (see Fig. 3 below)
 
-[Fig. 3: Sample command line creation of VM Appliance](docs/images/fig_3.png)
+![Fig. 3: Sample command line creation of VM Appliance](docs/images/fig_3.png)
 
 After this step is done NLP-ADAPT will be available from the VirtualBox GUI (see Fig. 4), or via the command line, using the command: =vboxmanage list vms=.
 
-
-[Fig. 4 GUI display of available VM appliances](docs/images/fig_4.png)
+![Fig. 4 GUI display of available VM appliances](docs/images/fig_4.png)
 
 ### Share the files for analysis.
 
@@ -42,7 +40,7 @@ Select NLP-ADAPT from the list and navigate to =Settings>Shared
 Folders>=. There should be a folder icon with a green plus sign on it. Click on this
 to add the shared folder. Select the location of data on the local host computer (i.e., the parent folder of =data_in=) for "Folder Path", and in the "Folder Name" field type ~data~ (see Fig. 5).
 
-Fig. 5 Configuring share folder on host](docs/images/fig_5.png)
+![Fig. 5 Configuring share folder on host](docs/images/fig_5.png)
 
 You can also do this from the command line using the command:
 =vboxmanage sharefolder add "NLP-IE" --name "data" --hostpath
