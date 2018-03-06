@@ -105,11 +105,7 @@ Click on the desktop shortcut for each annotator system. Please execute in the f
 2. "Run BiomedICUS"
 3. "Run Metamap"
 
-Each annotator system is configured to run in a standard way. If you need
-to change this, you can edit the desktop shortcut files
-found in `/home/ubuntu/Desktop` and the launcher files found in
-`/home/ubuntu/run_<system>.sh`. There are additional software
-specific configuration files found in `/home/ubuntu/<system>/nlpie/`.
+Each annotator system is configured to run in a standard way. If you need to change this, you can edit the desktop shortcut files found in `/home/ubuntu/Desktop` and the launcher files found in `/home/ubuntu/run_<system>.sh`. There are additional software specific configuration files found in `/home/ubuntu/<system>/nlpie/`.
 
 Each annotator system reads the text file records from the host’s shared folder, which is 
 mounted to NLP-ADAPT as  `/home/ubuntu/host_data`, and writes output to the
