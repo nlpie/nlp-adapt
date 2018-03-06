@@ -3,8 +3,11 @@
 * [University of Minnesota NLP-ADAPT (Artifact Discovery and Preparation Toolkit)](#university-of-minnesota-nlp-adapt-artifact-discovery-and-preparation-toolkit)
     * [Table of Contents](#table-of-contents)
         * [Installation](#installation)
-        * [Share the files for analysis.](#share-the-files-for-analysis)
+            * [Download OVA](#download-ova)
+            * [Set file share for analysis.](#set-file-share-for-analysis)
+            * [Please be aware](#please-be-aware)
         * [Using the Software](#using-the-software)
+            * [Open The VM](#open-the-vm)
             * [Run Annotator Systems](#run-annotator-systems)
             * [Run NLP-TAB](#run-nlp-tab)
             * [Run Amicus](#run-amicus)
@@ -20,7 +23,9 @@ The host system on which NLP-ADAPT is to be installed should have at least 8 gig
 
 ## Installation
 
-### Download NLP-ADAPT image: You will be sent a link to download the image, NLP-IE.ova, from Google Drive (this will take about an hour over wifi).
+### Download OVA
+
+Download NLP-ADAPT image: You will be sent a link to download the image, NLP-IE.ova, from Google Drive (this will take about an hour over wifi).
 
 Move `NLP-IE.ova` to a known folder and then open `NLP-IE.ova` with VirtualBox. This can be done through the VirtualBox GUI using the <File><Import Appliance> menu option (see Fig. 1):
     
@@ -49,7 +54,7 @@ After this step is done NLP-ADAPT will be available from the VirtualBox GUI (see
 *Fig. 4: GUI display of available VM appliances*
 
 &nbsp; &nbsp;
-### Share the files for analysis
+### Set file share for analysis
 
 Next, you will need to configure NLP-ADAPT to have access to a shared data folder on the local host computer, that will be used for holding text records for analysis by the annotator systems.
 
@@ -69,11 +74,17 @@ You can also do this from the command line using the command:
 `vboxmanage sharefolder add "NLP-IE" --name "data" --hostpath
 "/path/to/data_in_parent_folder"` to give the VM access to the host filesystem. Please note; The parent folder with “data_in” subfolder can be anywhere on the host computer, but the share /MUST/ be named "data" in order for the VM to run without modification.
 
-#### Please be aware
+### Please be aware
 
 These systems work out-of-the-box if using a single flat folder with no sub-folders for `data_in`. While a hierarchical structure with sub-folders may be used,
     you  will have to run the analysis software in batches, changing the
     configurations between runs.
+
+Your VM will need access to the internet in order to authenticate with UMLS. You will also need UMLS credentials in order to use this application: Please enter your UMLS username and password in `/home/ubuntu/umls.sh`. 
+
+## Using the Software
+
+You will need to copy the text files for analysis and annotation into the “data_in” folder contained in your shared directory.
 
 ### Open the VM
 
@@ -85,12 +96,6 @@ editing configuration files.
 
 Software for the NLP systems configured in NLP-ADAPT (viz., cTAKES, Biomedicus, MetaMap and NLP-TAB) can be found in the folder
 `/home/ubuntu`. Necessary environment variables to run these systems are set when NLP-ADAPT boots; these can be found in `/home/ubuntu/environment.sh` (also, please note that there is a line in this file that mounts the shared files to `/home/ubuntu/host_data`).
-
-Your VM will need access to the internet in order to authenticate with UMLS. You will also need UMLS credentials in order to use this application: Please enter your UMLS username and password in `/home/ubuntu/umls.sh`. 
-
-## Using the Software
-
-You will need to copy the text files for analysis and annotation into the “data_in” folder contained in your shared directory.
 
 ### Run Annotator Systems
 
