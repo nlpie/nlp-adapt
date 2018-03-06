@@ -73,7 +73,7 @@ editing configuration files.
 Software for the NLP systems configured in NLP-ADAPT (viz., cTAKES, Biomedicus, MetaMap and NLP-TAB) can be found in the folder
 `/home/ubuntu`. Necessary environment variables to run these systems are set when NLP-ADAPT boots; these can be found in `/home/ubuntu/environment.sh` (also, please note that there is a line in this file that mounts the shared files to `/home/ubuntu/host_data`).
 
-Your VM will need access to the internet in order to authenticate with UMLS. You will also need UMLS credentials in order to use this application: please enter your UMLS username and password in `/home/ubuntu/environment.sh`. 
+Your VM will need access to the internet in order to authenticate with UMLS. You will also need UMLS credentials in order to use this application: Please enter your UMLS username and password in `/home/ubuntu/umls.sh`. 
 
 ## Using the Software
 
