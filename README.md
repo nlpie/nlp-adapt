@@ -5,6 +5,7 @@
         * [Installation](#installation)
         * [Share the files for analysis.](#share-the-files-for-analysis)
         * [Using the Software](#using-the-software)
+            * [Run Annotator Systems](#run-annotator-systems)
             * [Run NLP-TAB](#run-nlp-tab)
             * [Run Amicus](#run-amicus)
         * [Known Issues:](#known-issues)
@@ -48,7 +49,7 @@ After this step is done NLP-ADAPT will be available from the VirtualBox GUI (see
 *Fig. 4: GUI display of available VM appliances*
 
 &nbsp; &nbsp;
-### Share the files for analysis.
+### Share the files for analysis
 
 Next, you will need to configure NLP-ADAPT to have access to a shared data folder on the local host computer, that will be used for holding text records for analysis by the annotator systems.
 
@@ -91,7 +92,9 @@ Your VM will need access to the internet in order to authenticate with UMLS. You
 
 You will need to copy the text files for analysis and annotation into the “data_in” folder contained in your shared directory.
 
-### Click on the desktop shortcut for each annotator system. Please execute in the following order, proceeding to the next system, once each has finished running:
+### Run Annotator Systems
+
+Click on the desktop shortcut for each annotator system. Please execute in the following order, proceeding to the next system, once each has finished running:
 
 1. "Run cTAKES"
 2. "Run BiomedICUS"
