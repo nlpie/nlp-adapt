@@ -16,15 +16,13 @@ Move `NLP-IE.ova` to a known folder and then open `NLP-IE.ova` with VirtualBox. 
 *Fig. 1: Using the GUI to select the source .OVA file to create a VM Appliance*
 
 &nbsp; &nbsp;
-
-Next, choose the file `NLP-ADAPT.ova` you have downloaded and then click on `Continue>Import>`. You should get a progress bar showing the status of building the VM (see Fig. 2).
+Next, choose the file `NLP-ADAPT.ova` you have downloaded and then click on `Continue>Import>`. You should get a progress bar showing the status of building the VM (see Fig. 2):
 
 
 ![](docs/images/fig_2.png)
 *Fig. 2: GUI VM Appliance creation status*
 
 &nbsp; &nbsp;
-
 Alternately, from the command line you can import the `NLP-ADAPT.ova` as an appliance by simply typing the command:
 
 `vboxmanage import /path/to/NLP-ADAPT.ova`. Once initiated, you will see output with status at the bottom of you terminal window (see Fig. 3 below)
@@ -49,7 +47,7 @@ To configure a shared drive, from the VM "Settings" menu:
 
 Select NLP-ADAPT from the list and navigate to `Settings>Shared
 Folders>`. There should be a folder icon with a green plus sign on it. Click on this
-to add the shared folder. Select the location of data on the local host computer (i.e., the parent folder of `data_in`) for "Folder Path", and in the "Folder Name" field type ~data~ (see Fig. 5).
+to add the shared folder. Select the location of data on the local host computer (i.e., the parent folder of `data_in`) for "Folder Path", and in the "Folder Name" field type ~data~ (see Fig. 5):
 
 ![](docs/images/fig_5.png)
 *Fig. 5: Configuring share folder on host*
