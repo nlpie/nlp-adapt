@@ -11,10 +11,14 @@ The host system on which NLP-ADAPT is to be installed should have at least 8 gig
 ### Download NLP-ADAPT image: You will be sent a link to download the image, NLP-IE.ova, from Google Drive (this will take about an hour over wifi).
 
 Move `NLP-IE.ova` to a known folder and then open `NLP-IE.ova` with VirtualBox. This can be done through the VirtualBox GUI using the <File><Import Appliance> menu option (see Fig. 1):
+    
 
 ![Fig. 1: Using the GUI to select the source .OVA file to create a VM Appliance](docs/images/fig_1.png)
 
-Next, choose the file `NLP-ADAPT.ova` you have downloaded and then click on <Continue><Import>. You should get a progress bar showing the status of building the VM (see Fig. 2).
+
+
+
+Next, choose the file `NLP-ADAPT.ova` you have downloaded and then click on `Continue>Import>`. You should get a progress bar showing the status of building the VM (see Fig. 2).
 
 ![Fig. 2. GUI VM Appliance creation status](docs/images/fig_2.png)
 
