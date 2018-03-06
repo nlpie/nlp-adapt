@@ -1,4 +1,11 @@
-# University of Minnesota NLP-ADAPT (Artifact Discovery and Preparation Toolkit) 
+# University of Minnesota NLP-ADAPT (Artifact Discovery and Preparation Toolkit)
+
+##### Table of Contents  
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip...    
+<a name="headers"/>
+## Headers
 
 NLP-ADAPT is configured with a wide variety of tools that can be used to annotate free-form medical texts and browse the output. These include the annotator engines: BiomedICUS, Metamap, cTAKES; the annotation browser NLP-TAB; and the annotation compatibility engine Amicus.
 
