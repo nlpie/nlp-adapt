@@ -4,8 +4,8 @@
     * [Table of Contents](#table-of-contents)
         * [Installation](#installation)
             * [Download OVA](#download-ova)
-            * [Set file share for analysis](#set-file-share-for-analysis)
-            * [Please be aware](#please-be-aware)
+            * [Set File Share for Analysis](#set-file-share-for-analysis)
+            * [Of Note](#of-note)
         * [Using the Software](#using-the-software)
             * [Open The VM](#open-the-vm)
             * [Run Annotator Systems](#run-annotator-systems)
@@ -54,7 +54,7 @@ After this step is done NLP-ADAPT will be available from the VirtualBox GUI (see
 *Fig. 4: GUI display of available VM appliances*
 
 &nbsp; &nbsp;
-### Set file share for analysis
+### Set File Share for Analysis
 
 Next, you will need to configure NLP-ADAPT to have access to a shared data folder on the local host computer, that will be used for holding text records for analysis by the annotator systems.
 
@@ -74,7 +74,7 @@ You can also do this from the command line using the command:
 `vboxmanage sharefolder add "NLP-IE" --name "data" --hostpath
 "/path/to/data_in_parent_folder"` to give the VM access to the host filesystem. Please note; The parent folder with “data_in” subfolder can be anywhere on the host computer, but the share /MUST/ be named "data" in order for the VM to run without modification.
 
-### Please be aware
+### Of Note
 
 These systems work out-of-the-box if using a single flat folder with no sub-folders for `data_in`. While a hierarchical structure with sub-folders may be used,
     you  will have to run the analysis software in batches, changing the
