@@ -42,7 +42,7 @@ Next, choose the file `NLP-ADAPT.ova` you have downloaded and then click on `Con
 &nbsp; &nbsp;
 Alternately, from the command line you can import the `NLP-ADAPT.ova` as an appliance by simply typing the command:
 
-`vboxmanage import /path/to/NLP-ADAPT.ova`. Once initiated, you will see output with status at the bottom of you terminal window (see Fig. 3 below)
+`vboxmanage import /path/to/NLP-ADAPT.ova`. Once initiated, you will see output with status at the bottom of you terminal window (see Fig. 3):
 
 ![](docs/images/fig_3.png)
 *Fig. 3: Sample command line creation of VM Appliance*
