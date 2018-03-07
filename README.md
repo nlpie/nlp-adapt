@@ -125,23 +125,23 @@ managing the merge process can be found in
 
 #### Known Issues:
 
-Pre-processing is required for the free-form medical texts in order to ensure that each annotator system runs without error. We have provided a desktop shortcut “Lint Data” to help you identify known issues in your data, including:
+- Pre-processing is required for the free-form medical texts in order to ensure that each annotator system runs without error. We have provided a desktop shortcut “Lint Data” to help you identify known issues in your data, including:
 
-- Issues with ill-formed fractional numbers and floating ‘.’: (system affected: MetaMap)
-- Issues with tabs and non-printable ascii characters: (systems affected: cTAKES, Biomedicus)
-- Issues with ill-formed fractional numbers: (system affected: MetaMap)
+-- Issues with ill-formed fractional numbers and floating ‘.’: (system affected: MetaMap)
+-- Issues with tabs and non-printable ascii characters: (systems affected: cTAKES, Biomedicus)
+-- Issues with ill-formed fractional numbers: (system affected: MetaMap)
 
-You must have a username and password to access the full UMLS.
+- You must have a username and password to access the full UMLS.
 
 ## Future Work
 A variety of improvements will be made to this system. The following section is intended to provide a road map for your own continuous integration and planning.
 
 ### Software
-As previously noted, data need to be in a flat file structure. We will provide the script to help you do this.
+- As previously noted, data need to be in a flat file structure. We will provide the script to help you do this.
 
-Annotators to be included : CLAMP, Metamap Lite
+- Annotators to be included : CLAMP, Metamap Lite
 
-Better UMLS integration between each NLP annotator system to reduce the overall footprint of the disk image, and for better management of UMLS credentials.
+- Better UMLS integration between each NLP annotator system to reduce the overall footprint of the disk image, and for better management of UMLS credentials.
 
-Use of containerized applications for smaller distribution footprint and clustering of processes.
+- Use of containerized applications for smaller distribution footprint and clustering of processes.
 
