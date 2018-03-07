@@ -127,9 +127,9 @@ managing the merge process can be found in
 
 - Pre-processing is required for the free-form medical texts in order to ensure that each annotator system runs without error. We have provided a desktop shortcut “Lint Data” to help you identify known issues in your data, including:
 
--- Issues with ill-formed fractional numbers and floating ‘.’: (system affected: MetaMap)
--- Issues with tabs and non-printable ascii characters: (systems affected: cTAKES, Biomedicus)
--- Issues with ill-formed fractional numbers: (system affected: MetaMap)
+   - Issues with ill-formed fractional numbers and floating ‘.’: (system affected: MetaMap)
+   - Issues with tabs and non-printable ascii characters: (systems affected: cTAKES, Biomedicus)
+   - Issues with ill-formed fractional numbers: (system affected: MetaMap)
 
 - You must have a username and password to access the full UMLS.
 
