@@ -25,9 +25,9 @@ The host system on which NLP-ADAPT is to be installed should have at least 8 gig
 
 ### Download OVA
 
-Download NLP-ADAPT image: You will be sent a link to download the image, NLP-IE.ova, from Google Drive (this will take about an hour over wifi).
+Download NLP-ADAPT image: You will be sent a link to download the image, NLP-ADAPT.ova, from Google Drive (this will take about an hour over wifi).
 
-Move `NLP-IE.ova` to a known folder and then open `NLP-IE.ova` with VirtualBox. This can be done through the VirtualBox GUI using the <File><Import Appliance> menu option (see Fig. 1):
+Move `NLP-ADAPT.ova` to a known folder and then open `NLP-ADAPT.ova` with VirtualBox. This can be done through the VirtualBox GUI using the <File><Import Appliance> menu option (see Fig. 1):
     
 ![](docs/images/fig_1.png)
 *Fig. 1: Using the GUI to select the source .OVA file to create a VM Appliance*
@@ -71,7 +71,7 @@ to add the shared folder. Select the location of data on the local host computer
 
 &nbsp; &nbsp;
 You can also do this from the command line using the command:
-`vboxmanage sharefolder add "NLP-IE" --name "data" --hostpath
+`vboxmanage sharefolder add "NLP-ADAPT" --name "data" --hostpath
 "/path/to/data_in_parent_folder"` to give the VM access to the host filesystem. Please note; The parent folder with “data_in” subfolder can be anywhere on the host computer, but the share /MUST/ be named "data" in order for the VM to run without modification.
 
 ### Of Note
@@ -88,7 +88,7 @@ You will need to copy the text files for analysis and annotation into the “dat
 
 ### Open the VM
 
-Once the host directory has been configured as a share with NLP-ADAPT, you can then start NLP-ADAPT by double clicking on NLP-IE in the VirtualBox Window, as shown in Fig. 4.
+Once the host directory has been configured as a share with NLP-ADAPT, you can then start NLP-ADAPT by double clicking on NLP-ADAPT in the VirtualBox Window, as shown in Fig. 4.
 
 In NLP-ADAPT there are shortcuts on the desktop for the available
 tasks. More advanced usage is available from the command line and by
