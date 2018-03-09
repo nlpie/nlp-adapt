@@ -64,7 +64,7 @@ To configure a shared drive, from the VM "Settings" menu:
 
 Select NLP-ADAPT from the list and navigate to `Settings>Shared
 Folders>`. There should be a folder icon with a green plus sign on it. Click on this
-to add the shared folder. Select the location of data on the local host computer (i.e., the parent folder of `data_in`) for "Folder Path", and in the "Folder Name" field type ~data~ (see Fig. 5):
+to add the shared folder. Select the location of data on the local host computer (i.e., the parent folder of `data_in`) for "Folder Path", and in the "Folder Name" field type "data" (see Fig. 5):
 
 ![](docs/images/fig_5.png)
 *Fig. 5: Configuring share folder on host*
