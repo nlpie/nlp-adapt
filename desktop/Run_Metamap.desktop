@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Run Metamap
+Comment=Run Metamap with the UIMA wrapper.
+Exec=bash -c "/home/ubuntu/run_metamap.sh"
+Icon=
+Path=
+Terminal=true
+StartupNotify=false

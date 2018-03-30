@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>gov.nih.nlm.nls.metamap.uima.MetaMapAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>MetaMapApiAE</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters>
+      <configurationParameter>
+        <name>metamap_server_path</name>
+        <description>Path to MetaMap 2009v2 Server (mmserver)</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>wsdserverctl_path</name>
+        <description>The path to the wsdserverctl script. Must only be set if the Disambiguation server should be started by the analysis engine.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>skrmedpostctl_path</name>
+        <description>The path to the skrmedpostctl script. Must only be set if the Tagger server should be started by the analysis engine.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>tempdir_path</name>
+        <description>The location of the temporary work directory. The analysis engine must be allowed to create and delete files there.
+If this parameter is not set by the user, then the analysis engine will try to use the default system temporary directory.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>metamap_options</name>
+        <description>options to pass metamap server before processing input.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>metamap_server_path</name>
+        <value>
+          <string><!-- /home/ubuntu/metamap/bin/mmserver11v2 --></string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>skrmedpostctl_path</name>
+        <value>
+          <string><!-- /home/ubuntu/metamap/bin/skrmedpostctl --></string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>wsdserverctl_path</name>
+        <value>
+          <string><!-- /home/ubuntu/metamap/bin/wsdserverctl --></string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>metamap_options</name>
+        <value>
+          <string></string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import location="/home/ubuntu/metamap/nlpie/CombinedTypeSystem.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">uima.tcas.DocumentAnnotation</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">org.metamap.uima.ts.Utterance</type>
+          <type allAnnotatorFeatures="true">org.metamap.uima.ts.Negation</type>
+          <type allAnnotatorFeatures="true">gov.nih.nlm.nls.metamap.uima.ts.Document</type>
+          <type allAnnotatorFeatures="true">gov.nih.nlm.nls.metamap.uima.ts.AcronymAbbrev</type>
+        </outputs>
+        <languagesSupported>
+          <language>en</language>
+        </languagesSupported>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

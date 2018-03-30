@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Launch NLP-TAB
+Comment=Starts the NLP-TAB webserver and opens it in a browser
+Exec=/home/ubuntu/run_nlp-tab.sh
+Icon=
+Terminal=true
+Type=Application
