@@ -119,7 +119,7 @@ There is also a shortcut for the annotation browser NLP-TAB. When the shortcut o
 
 ### Run Amicus
 
-If you run Amicus from the shortcut it will proceed to merge the output from the annotators systems using the xmi Type Definitions for each system. More on the Amicus system can be found here https://github.com/nlpie/amicus. The configuration file for
+If you run Amicus from the shortcut it will proceed to merge the output from the all of the annotator systems using the xmi Type Definitions of each system. More on the Amicus system can be found here https://github.com/nlpie/amicus. The configuration file for
 managing the merge process can be found in
 `/home/ubuntu/amicus/nlpie/merge_concepts.yml`
 
