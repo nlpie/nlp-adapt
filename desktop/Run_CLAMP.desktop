@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Run CLAMP
+Comment=Runs CLAMP CMD with the default settings
+Exec=bash -c '/home/ubuntu/run_clamp.sh'
+Icon=
+Path=
+Terminal=true
+StartupNotify=false
