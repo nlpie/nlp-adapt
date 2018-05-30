@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Launch UIMA AV
+Comment=Launch UIMA Annotation Viewer from AMICUS
+#Exec=java -cp /home/ubuntu/amicus/amicus.jar edu.umn.amicus.AV
+Exec=java -cp /home/ubuntu/amicus/amicus.jar:/home/ubuntu/metamap/src/uima/desc:/home/ubuntu/metamap/src/uima/lib/metamap-api-uima.jar org.apache.uima.tools.AnnotationViewerMain
+Icon=
+Terminal=true
+Type=Application

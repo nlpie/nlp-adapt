@@ -1,0 +1,65 @@
+# Concept merger
+# Merges concepts across systems using voting and partial overlap.
+# Writes all winning concepts to csv files.
+
+!!edu.umn.amicus.config.AmicusPipelineConfiguration
+pipelineName: NLPIE Merge Pipeline
+
+allSystemsUsed:
+- {
+    name: ctakes,
+    dataPath: /home/ubuntu/host_data/ctakes_out,
+    readFromView: _InitialView,
+    saveIntoView: CtakesView
+  }
+- {
+    name: biomedicus,
+    dataPath: /home/ubuntu/host_data/biomedicus_out,
+    readFromView: SystemView,
+    saveIntoView: BiomedicusView
+  }
+- {
+    name: metamap,
+    dataPath: /home/ubuntu/host_data/metamap_out,
+    readFromView: _InitialView,
+    saveIntoView: MetaMapView
+  }
+xmiOutPath: /home/ubuntu/host_data/amicus_out
+
+pipelineComponents:
+- !!edu.umn.amicus.config.MergerConfig
+  name: Concept merger
+  inputs:
+  - {
+    annotationType: org.apache.ctakes.typesystem.type.textsem.IdentifiedAnnotation,
+    # unnecessary to specify field; CtakesCuiPuller knows which one to use
+    puller: edu.umn.amicus.pullers.CtakesCuiPuller,
+    fromView: CtakesView
+  }
+  - {
+    annotationType: edu.umn.biomedicus.uima.type1_6.DictionaryConcept,
+    annotationField: identifier,
+    fromView: BiomedicusView
+  }
+  - {
+    annotationType: org.metamap.uima.ts.Candidate,
+    annotationField: cui,
+    fromView: MetaMapView
+  } 
+  aligner: edu.umn.amicus.aligners.PartialOverlapAligner
+  outputs:
+  - {
+    distiller: edu.umn.amicus.distillers.VotingDistiller,
+    writeView: MergedView
+  }
+
+- !!edu.umn.amicus.config.ExporterConfig
+  name: Concept exporter
+  inputs:
+  - {
+    fromView: MergedView
+  }
+  documentSummarizer: edu.umn.amicus.summary.EachSoloCsvSummarizer
+  documentSummaryOutDir: /home/ubuntu/host_data/amicus_summary
+  collectionSummarizer: edu.umn.amicus.summary.EachSoloCsvSummarizer
+  collectionSummaryOutFile: /home/ubuntu/host_data/amicus_summary/collection_concepts_voted.csv

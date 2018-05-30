@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Lint Data
+Comment=
+Exec=bash -c '/home/ubuntu/preprocess_data.sh'
+Icon=
+Path=
+Terminal=true
+StartupNotify=false

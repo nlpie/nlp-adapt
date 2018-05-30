@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Run Amicus
+Comment=Run Amicus using the default settings.
+Exec=bash -c "/home/ubuntu/run_amicus.sh"
+Icon=
+Path=
+Terminal=true
+StartupNotify=false
