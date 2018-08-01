@@ -24,6 +24,12 @@ allSystemsUsed:
     readFromView: _InitialView,
     saveIntoView: MetaMapView
   }
+- {
+    name: clamp,
+    dataPath: /home/ubuntu/host_data/clamp_out,
+    readFromView: _InitialView,
+    saveIntoView: ClampView
+  }
 xmiOutPath: /home/ubuntu/host_data/amicus_out
 
 pipelineComponents:
@@ -46,6 +52,11 @@ pipelineComponents:
     annotationField: cui,
     fromView: MetaMapView
   } 
+  - {
+    annotationType: edu.uth.clamp.nlp.typesystem.ClampNameEntityUIMA,
+    annotationField: cui,
+    fromView: ClampView
+  }
   aligner: edu.umn.amicus.aligners.PartialOverlapAligner
   outputs:
   - {

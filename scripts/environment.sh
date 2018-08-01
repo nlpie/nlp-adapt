@@ -10,6 +10,10 @@ export SAMPLE_FILE=$DATA_DIRECTORY/nlptab_manifest.txt
 #UIMA
 export UIMA_HOME=/home/ubuntu/uima
 
+#CLAMP
+export CLAMP_HOME=/home/ubuntu/clamp
+export CLAMP_OUT=$DATA_DIRECTORY/clamp_out
+
 #cTAKES
 export CTAKES_HOME=/home/ubuntu/ctakes
 # source /home/ubuntu/umls.sh

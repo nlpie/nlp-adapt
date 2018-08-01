@@ -1,16 +1,37 @@
 rm /home/ubuntu/amicus/TypeSystems/*
 cp /home/ubuntu/amicus/nlpie/AmicusTypeSystem.xml /home/ubuntu/amicus/TypeSystems/AmicusTypeSystem.xml
+
+#BioMedICUS
 cp /home/ubuntu/host_data/biomedicus_out/TypeSystem.xml /home/ubuntu/amicus/TypeSystems/BiomedICUSTypeSystem.xml
+
+#cTAKES
 cp /home/ubuntu/host_data/ctakes_out/TypeSystem.xml /home/ubuntu/amicus/TypeSystems/cTAKESTypeSystem.xml
+
+#MetaMap
 cp /home/ubuntu/host_data/metamap_out/TypeSystem.xml /home/ubuntu/amicus/TypeSystems/MetaMapTypeSystem.xml
+
+# CLAMP
+cp /home/ubuntu/host_data/clamp_out/TypeSystem.xml /home/ubuntu/amicus/TypeSystems/TypeSystem.xml
+
+# --- BUILD ---
 pushd $AMICUS_HOME
 ./build.sh
 popd
 
-java -jar /home/ubuntu/amicus/amicus.jar /home/ubuntu/amicus/nlpie/merge_concepts.yml
+# --- RUN ---
+if [ -f /home/ubuntu/Downloads/export.yml ]; then
+    java -jar /home/ubuntu/amicus/amicus.jar /home/ubuntu/Downloads/export.yml
+else
+    java -jar /home/ubuntu/amicus/amicus.jar /home/ubuntu/amicus/nlpie/merge_concepts.yml
+fi
 
+##### Create Archive for NLP-TAB #####
+if [ ! -f $SAMPLE_FILE ]; then
+    ls $DATA_IN | shuf -n $RANDOM_SAMPLE | sed 's/\.txt/\.txt\.xmi/' > $SAMPLE_FILE
+    echo "TypeSystem.xml" >> $SAMPLE_FILE
+fi
 pushd $AMICUS_OUT
-zip -r $AMICUS_OUT .
+zip $AMICUS_OUT -@ < $SAMPLE_FILE
 popd
 
 AMICUS_META='{"systemName":"Amicus", "systemDescription":"Amicus merged annotations", "instance":"default"}'

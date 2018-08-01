@@ -1,4 +1,5 @@
 ##### Run cTAKES #####
+mkdir -p $CTAKES_OUT
 source /home/ubuntu/umls.sh
 $CTAKES_HOME/bin/runClinicalPipeline.sh -i $DATA_IN --xmiOut $CTAKES_OUT
 
