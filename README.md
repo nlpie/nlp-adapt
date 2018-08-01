@@ -99,11 +99,12 @@ Software for the NLP systems configured in NLP-ADAPT (viz., cTAKES, Biomedicus, 
 
 ### Run Annotator Systems
 
-Click on the desktop shortcut for each annotator system. Please execute in the following order, proceeding to the next system, once each has finished running:
+Click on the desktop shortcut for each annotator system. Annotation systems may be run in any order. CLAMP requires special setup, described at the end of this section.
 
 1. "Run cTAKES"
 2. "Run BiomedICUS"
 3. "Run Metamap"
+4. "Run CLAMP"
 
 Each annotator system is configured to run in a standard way. If you need to change this, you can edit the desktop shortcut files found in `/home/ubuntu/Desktop` and the launcher files found in `/home/ubuntu/run_<system>.sh`. There are additional software specific configuration files found in `/home/ubuntu/<system>/nlpie/`.
 
@@ -113,14 +114,25 @@ sub-folder `<system>_out` in the `host_data` directory.
 
 The scripts that run the annotation systems also add the output to the NLP-TAB index for the next step. By default, the automated process adds in the same 50 random records into each annotator system. If you wish to change this you can edit the script `/home/ubuntu/environment.sh`.
 
+#### CLAMP
+Running CLAMP requires some first-time setup. You will need to go to the CLAMP website and fill out this [this form](https://clamp.uth.edu/get-clamp.php) to get a license to use the product. After receiving your activation code, open a terminal and go to the directory that contains CLAMP. You will then run `activation.sh` and enter your license code and email address, after which the CLAMP desktop shortcut should function in the same manner as the other annotation systems.
+
+```bash
+cd /home/ubuntu/clamp
+./activation.sh
+```
+
 ### Run NLP-TAB
 
-There is also a shortcut for the annotation browser NLP-TAB. When the shortcut on the desktop is run, it will open a web browser you can use to interact with the program to view the output of each annotator system. More on the NLP-TAB system can be found here https://github.com/nlpie/nlptab-webapp
+There is also a shortcut for the annotation browser NLP-TAB. When the shortcut on the desktop is run, it will open a web browser you can use to interact with the program to view the output of each annotator system. More on the NLP-TAB system can be found here https://github.com/nlpie/nlptab-webapp. Inside the NLP-TAB web-app, the "Types Systems" tab can be used to explore the types of annotations that each annotation system produced. The "Export" option can be checked for any annotation types that look promising, and the types can be exported as an Amicus configuration using the "Export Selected Types" button.
 
 ### Run Amicus
 
-If you run Amicus from the shortcut it will proceed to merge the output from the all of the annotator systems using the xmi Type Definitions of each system. More on the Amicus system can be found here https://github.com/nlpie/amicus. The configuration file for
-managing the merge process can be found in `/home/ubuntu/amicus/nlpie/merge_concepts.yml`
+Amicus is a specialized tool, a metasystem for combining, filtering, and merging annotations from multiple NLP systems. It's manual is found in PDF form [here](https://github.com/nlpie/amicus/blob/master/amicus-documentation.pdf). Amicus's primary use case on the NLP-ADAPT VM is to export a subset of meaningful tags from several annotation systems. This workflow is supported by NLP-TAB, which allows users to browse the annotations of several systems simultaneously, and select annotations for export.
+
+If you run Amicus from the shortcut, by default it will proceed to merge the output from the all of the annotator systems using the xmi Type Definitions of each system. The configuration file for managing the merge process can be found in `/home/ubuntu/amicus/nlpie/merge_concepts.yml`
+
+If, however, there is a file called `export.yml` in `/home/ubuntu/Downloads`, the "Run Amicus" shortcut will use that file instead. This feature allows easy integration with NLP-TAB output, which will download (through the web-browser) its output to that folder by default.
 
 #### Known Issues:
 
@@ -131,6 +143,7 @@ managing the merge process can be found in `/home/ubuntu/amicus/nlpie/merge_conc
    - Issues with ill-formed fractional numbers: (system affected: MetaMap)
 
 - You must have a username and password to access the full UMLS.
+- Amicus will fail when non "Annotation" types are exported from NLP-TAB
 
 ## Future Work
 A variety of improvements will be made to this system. The following section is intended to provide a road map for your own continuous integration and planning.
@@ -138,7 +151,7 @@ A variety of improvements will be made to this system. The following section is 
 ### Software
 - As previously noted, data need to be in a flat file structure. We will provide the script to help you do this.
 
-- Annotators to be included : CLAMP, Metamap Lite
+- Annotators to be included : Metamap Lite
 
 - Better UMLS integration between each NLP annotator system to reduce the overall footprint of the disk image, and for better management of UMLS credentials.
 
