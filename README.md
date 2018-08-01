@@ -126,11 +126,13 @@ cd /home/ubuntu/clamp
 
 There is also a shortcut for the annotation browser NLP-TAB. When the shortcut on the desktop is run, it will open a web browser you can use to interact with the program to view the output of each annotator system. More on the NLP-TAB system can be found here https://github.com/nlpie/nlptab-webapp. Inside the NLP-TAB web-app, the "Types Systems" tab can be used to explore the types of annotations that each annotation system produced. The "Export" option can be checked for any annotation types that look promising, and the types can be exported as an Amicus configuration using the "Export Selected Types" button.
 
+Type Systems can be added manually through the web interface if you'd like to change what files are analyzed or use annotation systems that are not provided with the NLP-ADAPT VM.
+
 ### Run Amicus
 
 Amicus is a specialized tool, a metasystem for combining, filtering, and merging annotations from multiple NLP systems. It's manual is found in PDF form [here](https://github.com/nlpie/amicus/blob/master/amicus-documentation.pdf). Amicus's primary use case on the NLP-ADAPT VM is to export a subset of meaningful tags from several annotation systems. This workflow is supported by NLP-TAB, which allows users to browse the annotations of several systems simultaneously, and select annotations for export.
 
-If you run Amicus from the shortcut, by default it will proceed to merge the output from the all of the annotator systems using the xmi Type Definitions of each system. The configuration file for managing the merge process can be found in `/home/ubuntu/amicus/nlpie/merge_concepts.yml`
+If you run Amicus from the shortcut, by default it will proceed to merge the output from the all of the annotator systems using the xmi Type Definitions of each system. The configuration file for managing the merge process can be found in `/home/ubuntu/amicus/nlpie/merge_concepts.yml` This configuration file will only work if all annotation systems are run, and must be edited if different behavior is desired.
 
 If, however, there is a file called `export.yml` in `/home/ubuntu/Downloads`, the "Run Amicus" shortcut will use that file instead. This feature allows easy integration with NLP-TAB output, which will download (through the web-browser) its output to that folder by default.
 
@@ -144,6 +146,8 @@ If, however, there is a file called `export.yml` in `/home/ubuntu/Downloads`, th
 
 - You must have a username and password to access the full UMLS.
 - Amicus will fail when non "Annotation" types are exported from NLP-TAB
+- *OSX USERS*: `.DS_STORE` file can cause annotation systems to fail.
+- NLP-TAB requires time to index some representative files after each annotation system run. Shutting down during this process will result in an unknown state that is difficult to recover from. `curl -XDELETE localhost:9200/_all` issued from the command line will reset all of the NLP-TAB indices.
 
 ## Future Work
 A variety of improvements will be made to this system. The following section is intended to provide a road map for your own continuous integration and planning.
