@@ -124,7 +124,17 @@ cd /home/ubuntu/clamp
 
 ### Run NLP-TAB
 
-There is also a shortcut for the annotation browser NLP-TAB. When the shortcut on the desktop is run, it will open a web browser you can use to interact with the program to view the output of each annotator system. More on the NLP-TAB system can be found here https://github.com/nlpie/nlptab-webapp. Inside the NLP-TAB web-app, the "Types Systems" tab can be used to explore the types of annotations that each annotation system produced. The "Export" option can be checked for any annotation types that look promising, and the types can be exported as an Amicus configuration using the "Export Selected Types" button.
+There is also a shortcut for the annotation browser NLP-TAB. When the shortcut on the desktop is run, it will open a web browser you can use to interact with the program to view the output of each annotator system. More on the NLP-TAB system can be found here https://github.com/nlpie/nlptab-webapp. 
+
+Inside the NLP-TAB web-app, the "Types Systems" tab can be used to explore the types of annotations that each annotation system produced. The "Export" option can be checked for any annotation types that look promising.
+
+![](docs/images/fig_6.png)
+*Fig. 6: Exploring a type system, with the "export" option indicated*
+
+The types can be exported as an Amicus configuration using the "Export Selected Types" button.
+
+![](docs/images/fig_7.png)
+*Fig. 7: Location of the "Export Selected Types" button*
 
 Type Systems can be added manually through the web interface if you'd like to change what files are analyzed or use annotation systems that are not provided with the NLP-ADAPT VM.
 
@@ -140,7 +150,7 @@ If, however, there is a file called `export.yml` in `/home/ubuntu/Downloads`, th
 
 - Pre-processing is required for the free-form medical texts in order to ensure that each annotator system runs without error. We have provided a desktop shortcut “Lint Data” to help you identify known issues in your data, including:
 
-   - Issues with ill-formed fractional numbers and floating ‘.’: (system affected: MetaMap)
+   - Issues with ill-formed fractional numbers and floating `.`: (system affected: MetaMap)
    - Issues with tabs and non-printable ascii characters: (systems affected: cTAKES, Biomedicus)
    - Issues with ill-formed fractional numbers: (system affected: MetaMap)
 
