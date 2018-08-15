@@ -157,7 +157,7 @@ If, however, there is a file called `export.yml` in `/home/ubuntu/Downloads`, th
 - You must have a username and password to access the full UMLS.
 - Amicus will fail when non "Annotation" types are exported from NLP-TAB
 - *OSX USERS*: `.DS_STORE` file can cause annotation systems to fail.
-- NLP-TAB requires time to index some representative files after each annotation system run. Shutting down during this process will result in an unknown state that is difficult to recover from. `curl -XDELETE localhost:9200/_all` issued from the command line will reset all of the NLP-TAB indices.
+- NLP-TAB requires time to index some representative files after each annotation system run. Shutting down during this process will result in an unknown state that is difficult to recover from. `curl -XDELETE localhost:9200/_all` issued from the command line will reset all of the NLP-TAB indices. If this command times out, you may need to manually delete the indexes with `rm -r /var/lib/elasticsearch/nodes/0/indices/*`.
 
 ## Future Work
 A variety of improvements will be made to this system. The following section is intended to provide a road map for your own continuous integration and planning.
