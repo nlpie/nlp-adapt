@@ -14,7 +14,7 @@ mkdir -p quarantine
 
 while read -r filename
 do
-    mv -- "$filename" quarantine
+    [ -f "$filename" ] && mv -- "$filename" quarantine
 done < "$temp"
 
 # Usage:
