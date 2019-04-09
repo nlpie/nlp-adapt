@@ -25,7 +25,7 @@ The host system on which NLP-ADAPT is to be installed should have at least 8 gig
 
 ### Download OVA
 
-Download NLP-ADAPT image: You will be sent a link to download the image, NLP-ADAPT.ova, from Google Drive (this will take about an hour over wifi).
+Download NLP-ADAPT image from here https://athena.ahc.umn.edu/biomedicus-downloads/verify-umls/NLP-ADAPT.ova (this will take about an hour over wifi).
 
 Move `NLP-ADAPT.ova` to a known folder and then open `NLP-ADAPT.ova` with VirtualBox. This can be done through the VirtualBox GUI using the <File><Import Appliance> menu option (see Fig. 1):
     
